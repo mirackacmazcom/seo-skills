@@ -1,5 +1,7 @@
 # LLM Patents skill for Claude and AI agents
 
+<p align="center"><img src="../../assets/cards/llm-patents.png" alt="" width="560"></p>
+
 Search 157,165 patent publications that mention large language models, filterable by company: OpenAI, Microsoft, Perplexity, Anthropic, Google and more.
 
 Part of [SEO Skills](../../README.md), free skills that answer from primary sources. Full page with an example answer: [seoskills.io/skills/llm-patents](https://seoskills.io/skills/llm-patents/).
@@ -11,6 +13,10 @@ Part of [SEO Skills](../../README.md), free skills that answer from primary sour
 - "Is there a patent behind this GEO claim?"
 
 The agent uses the skill when your question calls for it. To call it by name in Claude Code: `/llm-patents` (or `/seo-skills:llm-patents` when installed as a plugin).
+
+## See it answer
+
+<img src="../../assets/demos/llm-patents.png" alt="Example answer from the llm-patents skill, with the search it ran" width="100%">
 
 ## Install
 

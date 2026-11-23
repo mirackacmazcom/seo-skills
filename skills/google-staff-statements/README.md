@@ -1,5 +1,7 @@
 # Google Staff Statements skill for Claude and AI agents
 
+<p align="center"><img src="../../assets/cards/google-staff-statements.png" alt="" width="560"></p>
+
 Search 47,388 public statements by Google's search team, with the date, the question being answered and a link to the source.
 
 Part of [SEO Skills](../../README.md), free skills that answer from primary sources. Full page with an example answer: [seoskills.io/skills/google-staff-statements](https://seoskills.io/skills/google-staff-statements/).
@@ -11,6 +13,10 @@ Part of [SEO Skills](../../README.md), free skills that answer from primary sour
 - "Has Google's advice on this changed over the years?"
 
 The agent uses the skill when your question calls for it. To call it by name in Claude Code: `/google-staff-statements` (or `/seo-skills:google-staff-statements` when installed as a plugin).
+
+## See it answer
+
+<img src="../../assets/demos/google-staff-statements.png" alt="Example answer from the google-staff-statements skill, with the search it ran" width="100%">
 
 ## Install
 

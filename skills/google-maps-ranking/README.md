@@ -1,5 +1,7 @@
 # Google Maps Ranking skill for Claude and AI agents
 
+<p align="center"><img src="../../assets/cards/google-maps-ranking.png" alt="" width="560"></p>
+
 Answer local SEO and Google Maps ranking questions from 326 patent families, 111 official documents, 45 staff statements and 26 Google Research papers.
 
 Part of [SEO Skills](../../README.md), free skills that answer from primary sources. Full page with an example answer: [seoskills.io/skills/google-maps-ranking](https://seoskills.io/skills/google-maps-ranking/).
@@ -11,6 +13,10 @@ Part of [SEO Skills](../../README.md), free skills that answer from primary sour
 - "Which patents describe ranking local results by distance?"
 
 The agent uses the skill when your question calls for it. To call it by name in Claude Code: `/google-maps-ranking` (or `/seo-skills:google-maps-ranking` when installed as a plugin).
+
+## See it answer
+
+<img src="../../assets/demos/google-maps-ranking.png" alt="Example answer from the google-maps-ranking skill, with the search it ran" width="100%">
 
 ## Install
 

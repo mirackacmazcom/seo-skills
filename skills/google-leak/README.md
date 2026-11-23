@@ -1,5 +1,7 @@
 # Google Leak skill for Claude and AI agents
 
+<p align="center"><img src="../../assets/cards/google-leak.png" alt="" width="560"></p>
+
 Search the leaked Google Content Warehouse API documentation: 2,756 schemas and 15,050 fields, with the description Google's engineers wrote for each one.
 
 Part of [SEO Skills](../../README.md), free skills that answer from primary sources. Full page with an example answer: [seoskills.io/skills/google-leak](https://seoskills.io/skills/google-leak/).
@@ -11,6 +13,10 @@ Part of [SEO Skills](../../README.md), free skills that answer from primary sour
 - "I'm refreshing old posts. Does the leak store more than one date per page?"
 
 The agent uses the skill when your question calls for it. To call it by name in Claude Code: `/google-leak` (or `/seo-skills:google-leak` when installed as a plugin).
+
+## See it answer
+
+<img src="../../assets/demos/google-leak.png" alt="Example answer from the google-leak skill, with the search it ran" width="100%">
 
 ## Install
 

@@ -1,5 +1,7 @@
 # Google Patents skill for Claude and AI agents
 
+<p align="center"><img src="../../assets/cards/google-patents.png" alt="" width="560"></p>
+
 Search 54,101 Google patent publications on ranking, crawling, links, site quality and AI search, in full text, and answer with the patent number and paragraph.
 
 Part of [SEO Skills](../../README.md), free skills that answer from primary sources. Full page with an example answer: [seoskills.io/skills/google-patents](https://seoskills.io/skills/google-patents/).
@@ -11,6 +13,10 @@ Part of [SEO Skills](../../README.md), free skills that answer from primary sour
 - "Someone says Google patented X. Is that true?"
 
 The agent uses the skill when your question calls for it. To call it by name in Claude Code: `/google-patents` (or `/seo-skills:google-patents` when installed as a plugin).
+
+## See it answer
+
+<img src="../../assets/demos/google-patents.png" alt="Example answer from the google-patents skill, with the search it ran" width="100%">
 
 ## Install
 

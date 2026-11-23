@@ -2,17 +2,29 @@
   <a href="https://seoskills.io"><img src="assets/banner.png" alt="SEO Skills: free SEO skills for Claude Code and AI agents that cite the source" width="100%"></a>
 </p>
 
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-c8f352?style=flat-square&labelColor=1a1b1f"></a>
+  <a href="#the-seven-skills"><img alt="7 skills" src="https://img.shields.io/badge/skills-7-c8f352?style=flat-square&labelColor=1a1b1f"></a>
+  <a href="#install"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-D97757?style=flat-square&labelColor=1a1b1f"></a>
+  <a href="#mcp-server"><img alt="MCP server" src="https://img.shields.io/badge/MCP-server-c8f352?style=flat-square&labelColor=1a1b1f"></a>
+  <a href="https://agentskills.io"><img alt="Agent Skills format" src="https://img.shields.io/badge/format-Agent%20Skills-a0a3a8?style=flat-square&labelColor=1a1b1f"></a>
+  <a href="https://seoskills.io"><img alt="Website seoskills.io" src="https://img.shields.io/badge/web-seoskills.io-c8f352?style=flat-square&labelColor=1a1b1f"></a>
+</p>
+
 # SEO Skills for Claude Code, Codex, Cursor and other AI agents
 
 **Seven free SEO skills that make your AI agent answer from primary sources instead of memory.** Each skill gives the agent a searchable archive: the leaked Google Content Warehouse API documentation, Google's search patents, Google and Alphabet AI patents, LLM patents, Google's official search documentation, public statements by Google's search team, and the sources behind Google Maps ranking. The agent searches the archive, quotes the field, the claim or the passage, and tells you what the source does not show.
 
 Works with **Claude Code**, the **Claude apps**, **Codex**, **Cursor**, **Gemini CLI**, **GitHub Copilot in VS Code** and **OpenCode**, and as a remote **MCP server**.
 
+<p align="center"><img src="assets/agents.png" alt="Works with Claude Code, Claude apps, Codex, Cursor, Gemini CLI, VS Code Copilot and OpenCode" width="100%"></p>
+
 [Website](https://seoskills.io) · [Install guide](https://seoskills.io/install/) · [All skills](#the-seven-skills) · [MCP server](#mcp-server) · [FAQ](#faq)
 
 <p align="center">
-  <img src="assets/demo.png" alt="Claude using the Google Leak skill to answer an SEO question about publish dates, quoting PerDocData.semanticDate from the leaked documentation" width="100%">
+  <img src="assets/demos/google-leak.png" alt="Claude using the Google Leak skill to answer an SEO question about publish dates, quoting PerDocData.semanticDate from the leaked documentation" width="100%">
 </p>
+
 
 ## Contents
 
@@ -26,9 +38,13 @@ Works with **Claude Code**, the **Claude apps**, **Codex**, **Cursor**, **Gemini
 - [FAQ](#faq)
 - [License](#license)
 
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
 ## Why use these skills
 
 A model answering an SEO question from memory repeats what blog posts said about Google. It cannot show you the passage it relies on, it blends patents, leaks and official advice into one answer, and it sounds just as sure when it is wrong.
+
+<p align="center"><img src="assets/steps.png" alt="Ask before you act: tell Claude what you are about to do, it checks the plan against the source, then go ahead, adjust or drop it" width="100%"></p>
 
 With a skill, the agent **checks your plan against the source before you act**: tell it what you are about to do, and it searches the archive, quotes what applies, suggests what to change and says where the evidence stops.
 
@@ -38,7 +54,28 @@ With a skill, the agent **checks your plan against the source before you act**: 
 - *"We're generating 500 location pages with AI. Will Google treat that as spam?"*
 - *"How does ChatGPT search decide which pages to cite?"*
 
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
 ## The seven skills
+
+<table>
+<tr>
+<td width="50%"><a href="skills/google-leak"><img src="assets/cards/google-leak.png" alt="Google Leak skill" width="100%"></a></td>
+<td width="50%"><a href="skills/google-maps-ranking"><img src="assets/cards/google-maps-ranking.png" alt="Google Maps Ranking skill" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="skills/google-patents"><img src="assets/cards/google-patents.png" alt="Google Patents skill" width="100%"></a></td>
+<td width="50%"><a href="skills/google-ai-patents"><img src="assets/cards/google-ai-patents.png" alt="Google AI Patents skill" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="skills/llm-patents"><img src="assets/cards/llm-patents.png" alt="LLM Patents skill" width="100%"></a></td>
+<td width="50%"><a href="skills/google-search-docs"><img src="assets/cards/google-search-docs.png" alt="Google Search Docs skill" width="100%"></a></td>
+</tr>
+<tr>
+<td width="50%"><a href="skills/google-staff-statements"><img src="assets/cards/google-staff-statements.png" alt="Google Staff Statements skill" width="100%"></a></td>
+<td width="50%" align="center"><a href="#install"><b>Install all seven →</b></a></td>
+</tr>
+</table>
 
 | Skill | Archive | Ask it about |
 |---|---|---|
@@ -51,6 +88,55 @@ With a skill, the agent **checks your plan against the source before you act**: 
 | [**Google Staff Statements**](skills/google-staff-statements) | 47,388 statements by eight Google Search people | What Mueller, Illyes, Splitt, Sullivan and others said, with date and question |
 
 Each skill has its own page on [seoskills.io](https://seoskills.io/#skills) with an example answer and the limits of its sources.
+
+### See each skill answer
+
+Every example below uses the skill's real archive: the quote, the field name and the patent number come from the search shown on the right.
+
+<details>
+<summary><b>Google Leak: is changing the publish date enough?</b></summary>
+<br>
+<img src="assets/demos/google-leak.png" alt="Google Leak: is changing the publish date enough?" width="100%">
+</details>
+
+<details>
+<summary><b>Google Maps Ranking: keywords in a Business Profile name</b></summary>
+<br>
+<img src="assets/demos/google-maps-ranking.png" alt="Google Maps Ranking: keywords in a Business Profile name" width="100%">
+</details>
+
+<details>
+<summary><b>Google Patents: does link position matter?</b></summary>
+<br>
+<img src="assets/demos/google-patents.png" alt="Google Patents: does link position matter?" width="100%">
+</details>
+
+<details>
+<summary><b>Google AI Patents: getting cited in AI Overviews</b></summary>
+<br>
+<img src="assets/demos/google-ai-patents.png" alt="Google AI Patents: getting cited in AI Overviews" width="100%">
+</details>
+
+<details>
+<summary><b>LLM Patents: how ChatGPT search picks sources</b></summary>
+<br>
+<img src="assets/demos/llm-patents.png" alt="LLM Patents: how ChatGPT search picks sources" width="100%">
+</details>
+
+<details>
+<summary><b>Google Search Docs: 500 AI-generated location pages</b></summary>
+<br>
+<img src="assets/demos/google-search-docs.png" alt="Google Search Docs: 500 AI-generated location pages" width="100%">
+</details>
+
+<details>
+<summary><b>Google Staff Statements: should I disavow these links?</b></summary>
+<br>
+<img src="assets/demos/google-staff-statements.png" alt="Google Staff Statements: should I disavow these links?" width="100%">
+</details>
+
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
 ## Install
 
@@ -112,6 +198,8 @@ Download a skill's ZIP from its page on [seoskills.io](https://seoskills.io/#ski
 
 Python 3 and internet access. No other packages, no account and no API key.
 
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
 ## How to use the skills
 
 **Just ask.** The agent reads the short description of every installed skill and uses the right one when your question calls for it. You do not need to name the skill.
@@ -130,6 +218,8 @@ I'm about to redirect 300 old posts to one guide. What do the sources say?
 
 Good questions name a plan or a claim to check, not just a topic. The skills are built to say what the source supports, suggest what to do, and mark where the evidence stops, so you can act on it.
 
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
 ## MCP server
 
 The same seven search tools are available as a remote MCP server, for clients that cannot run scripts or have no network access from their sandbox:
@@ -146,7 +236,11 @@ claude mcp add --transport http seoskills https://mcp.seoskills.io/mcp
 
 Claude apps: **Settings → Connectors → Add custom connector** and paste the URL. Any client that supports remote MCP over Streamable HTTP works the same way.
 
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
 ## How it works
+
+<p align="center"><img src="assets/how-it-works.png" alt="How it works: your question goes to the skill, the skill queries api.seoskills.io, which searches the archive and returns a sourced answer" width="100%"></p>
 
 A skill is a folder with a `SKILL.md` file, reference notes and a small Python script. The archives behind these skills are several gigabytes, so they stay on seoskills.io: the script sends its arguments to `api.seoskills.io`, where the search tool runs, and prints the answer. Nothing is downloaded, search terms are not stored, and the script uses only the Python standard library. Read `scripts/` in any skill folder to see exactly what it sends.
 
@@ -156,6 +250,8 @@ skills/google-leak/
 ├── references/           # topic map and background notes the agent can read
 └── scripts/leak.py       # sends the search to api.seoskills.io and prints the result
 ```
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
 ## What each kind of source can and cannot show
 
@@ -167,6 +263,8 @@ Every skill tells the agent what its source proves, so an answer does not turn o
 | Patents | That Google described a method and sought protection for it | That the method is in use |
 | Official documentation | What Google recommends, supports and treats as a violation | Ranking weights or a full list of signals |
 | Staff statements | Google's comment on one question at one moment | A permanent rule; positions change |
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
 ## FAQ
 
@@ -190,6 +288,8 @@ No skill can. It tells you what the source says, what it does not say, and keeps
 
 **Can I read what a skill does before installing it?**
 Yes, and you should. Each skill is plain text and one short Python script in this repository.
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
 ## License
 
