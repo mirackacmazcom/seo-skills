@@ -31,7 +31,7 @@ If the tool says there were too many searches, wait a minute before the next one
   labelled `weak-match`. **Use `--core` for general questions**; then only families that deal with LLMs in their
   title/abstract/claims remain.
 - **Full text is mostly US.** US publications (and the WO/EP publications collected company by company) have
-  claims and description; China (76 thousand), Japan, Korea and the others have an English title + abstract only
+  claims and description; China (82 thousand), Japan, Korea and the others have an English title + abstract only
   (`abstract-only`). A Chinese patent that mentions LLMs only in its description is not in the archive.
 - **The company label is derived from the applicant name** (`--company`, full list in `stats`). Unlabelled
   publications are `(other)`; universities and small companies are here. Subsidiary names may have been missed.
@@ -54,7 +54,7 @@ The only tool is `scripts/patent.py` (Python 3, no extra packages needed). Run i
 python3 scripts/patent.py stats                                   # counts and distribution by company
 python3 scripts/patent.py search language model plugin api --core # --core: drop weak matches and acquired ones
 python3 scripts/patent.py search search results summary --company microsoft --core --granted
-python3 scripts/patent.py search search engine citation --company perplexity
+python3 scripts/patent.py search search engine --company perplexity
 python3 scripts/patent.py search prompt cache --company openai --core
 python3 scripts/patent.py search '"generative response engine"' --in claims --granted
 python3 scripts/patent.py show US11922144B1                       # bibliographic data + abstract + first independent claim
@@ -71,7 +71,7 @@ What you need to know:
 - **`--company`** values: LLM companies `openai`, `anthropic`, `perplexity`, `mistral`, `cohere`, `ai21`,
   `character`, `stability`, `deepseek`, `huggingface`, `zhipu`, `moonshot`; big tech `google`, `microsoft`,
   `meta`, `amazon`, `apple`, `nvidia`, `ibm`, `salesforce`, `adobe`, `oracle`, `sap`, `baidu`, `alibaba`,
-  `tencent`, `bytedance`, `huawei`, `samsung`, `iflytek`, `inspur` and others (full list and counts: `stats`).
+  `tencent`, `bytedance`, `huawei`, `samsung`, `iflytek`, `inspur` and others (counts for the 40 largest groups: `stats`).
   **`--core`** drops weak matches and acquired publications; use it in general searches and for questions like
   "what has company X patented around LLMs".
 - **`search` works with English terms**, and words are reduced to their stems. Search with two or three
@@ -100,7 +100,7 @@ your inference unless the text says so; present it as such.
 
 For SEO/GEO questions (do LLMs choose sources, how do they cite, how do they use search) look especially at
 Perplexity's search patents and at OpenAI's "generative response engine" / search / file search applications. If
-a comparison with Google's AI Overview patents is requested, also use the `google-patents` skill and state
+a comparison with Google's AI Overview patents is requested, also use the `google-ai-patents` skill and state
 separately which information comes from which archive.
 
 ## Reference files

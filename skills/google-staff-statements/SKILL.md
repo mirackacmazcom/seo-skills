@@ -1,6 +1,6 @@
 ---
 name: google-staff-statements
-description: Searches an archive of the public statements of eight current members of Google's Search team (John Mueller, Gary Illyes, Martin Splitt, Danny Sullivan / Search Liaison, Daniel Waisberg, Cherry Prommawin, Lizzi Sassman, Rajan Patel) — 47,000+ items from X, Bluesky, Mastodon, LinkedIn, Threads, Reddit, Stack Exchange, Hacker News, GitHub, Google+, Search Central YouTube videos and office hours, the Search Off the Record podcast, external podcast/video interviews, press interviews and personal sites — and answers questions from the person's own words, with the question they were answering, the date and the link. Use it when the user asks "what did Mueller say about X", "did Gary Illyes say this", "what has Search Liaison said about this", "what do Google employees say about canonical / noindex / crawl budget / core updates / E-E-A-T / AI content / backlinks / disavow", "who said this and when", "has Google changed its position on this", or whenever an SEO claim needs checking against what a Google employee actually said, even if no person is named. Do not quote statements from memory; take them from this skill's database. For official documentation use google-search-docs, for the leak google-leak, for patents google-patents.
+description: Searches an archive of the public statements of eight current members of Google's Search team (John Mueller, Gary Illyes, Martin Splitt, Danny Sullivan / Search Liaison, Daniel Waisberg, Cherry Prommawin, Lizzi Sassman, Rajan Patel) — 47,000+ items from X, Bluesky, Mastodon, LinkedIn, Threads, Reddit, Stack Exchange, Hacker News, GitHub, Google+, Search Central YouTube videos and office hours, the Search Off the Record podcast, external podcast/video interviews, press interviews and personal sites — and answers questions from the person's own words, with the question they were answering, the date and the link. Use it when the user asks "what did Mueller say about X", "did Gary Illyes say this", "what has Search Liaison said about this", "what do Google employees say about canonical / noindex / crawl budget / core updates / E-E-A-T / AI content / backlinks / disavow", "who said this and when", "has Google changed its position on this", or whenever an SEO claim needs checking against what a Google employee actually said, even if no person is named. Do not quote statements from memory; take them from this skill's database. For official documentation use google-search-docs, for the leak google-leak, for patents google-patents or google-ai-patents.
 ---
 
 # Statements by Google Search staff
@@ -36,7 +36,7 @@ python3 scripts/statements.py search "core update" -k sullivan -p x,bluesky     
 python3 scripts/statements.py search "AI content" --in-question            # also search the text the person was ASKED
 python3 scripts/statements.py search "domain authority" --question-only -k mueller  # questions only: who asked what
 python3 scripts/statements.py show 2258                                    # header + thread + the full reply
-python3 scripts/statements.py show 31270 --at 26:40                        # a moment in a transcript (±60 s); --unit N also works
+python3 scripts/statements.py show 31270 --at 26:40                        # a moment in a transcript (60 s before to 120 s after); --unit N also works
 python3 scripts/statements.py find "isn't a ranking factor" -k mueller     # does the phrase occur verbatim, who, where
 python3 scripts/statements.py timeline "subdomain" -k mueller -n 30        # statements on a topic in date order (default first 60)
 python3 scripts/statements.py people                                       # people, platforms, date ranges
@@ -63,7 +63,7 @@ What you need to know:
   the reply itself. If these people have other messages in the same thread, it lists them at the end. For long
   items (video, podcast, office hours, blog) do not print everything; use the unit number from the result line
   (`#12`) with `show <id> --unit 12`, or `show <id> --search "disavow toxic"` (the best-matching unit within the
-  item), and for video `--at MIN:SEC` (that moment ±60 s, with a timestamped watch link). `--full` prints
+  item), and for video `--at MIN:SEC` (from 60 s before to 120 s after that moment, with a timestamped watch link; widen with `--around SECONDS`). `--full` prints
   everything.
 - **Speaker identity (very important):**
   - Social media, site and LinkedIn items come from the person's **own account**; the words are theirs.
@@ -72,7 +72,7 @@ What you need to know:
     is tied to the named speaker; the `-k` filter does not attribute guests' words to that person. The labels come
     from the source and occasionally slip: if a unit contains a question followed by a long answer (e.g. the host's
     question followed immediately by the guest's story), the label may be missing. If the content does not fit the
-    person, read the surrounding text with `--around`.
+    person, read the surrounding transcript with `show <unit> --at MIN:SEC` or the whole unit with `--full`.
   - In transcripts without speaker labels (external videos, external podcasts, some older videos) the header shows
     `participants: … — no speaker separation`. This shows the person took part in the recording, but **not** that
     they said the matching sentence: the host, a guest or another Google employee may have said it. Before

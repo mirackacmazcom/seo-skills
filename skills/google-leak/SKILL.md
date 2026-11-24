@@ -134,5 +134,3 @@ Question: "Does Google keep something called site authority?"
   the relevant section before you start searching.
 - `references/background.md` — what the leak is, the timeline, the revisions, Google's statement, and the limits
   of the document. Read it when the user asks about the leak itself, its reliability or its history.
-- `data/schemas.jsonl` — the database itself (one schema per line). Normally you do not need to read it directly;
-  if the tool is not enough, it can also be searched with `grep`.

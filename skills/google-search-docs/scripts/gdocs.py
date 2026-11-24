@@ -25,12 +25,15 @@ def main():
     req = urllib.request.Request(
         f"{API}/v1/{SKILL}",
         data=json.dumps({"args": args}).encode("utf-8"),
-        headers={"Content-Type": "application/json", "User-Agent": "seoskills-skill/1.0 ({SKILL})"},
+        headers={"Content-Type": "application/json", "User-Agent": f"seoskills-skill/1.1 ({SKILL})"},
         method="POST",
     )
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
-            result = json.load(r)
+            body = r.read()
+        result = json.loads(body.decode("utf-8"))
+        if not isinstance(result, dict):
+            raise ValueError("unexpected response")
     except urllib.error.HTTPError as e:
         try:
             message = json.load(e).get("error", "")
@@ -39,17 +42,30 @@ def main():
         if e.code == 429:
             sys.exit("Too many searches in a short time. Wait a minute and run the command again.")
         sys.exit(f"The search API returned an error ({e.code}). {message}".strip())
+    except ValueError:
+        sys.exit(
+            f"{API} sent a response this script could not read. It may be a temporary block or outage.\n"
+            "Wait a minute and run the command again, or use the SEO Skills MCP server: https://seoskills.io/install/"
+        )
     except (urllib.error.URLError, TimeoutError, OSError) as e:
         sys.exit(
             f"Could not reach {API} ({e}).\n"
             "This skill needs internet access to run its searches. If your agent runs in a sandbox without it,\n"
             "connect the SEO Skills MCP server instead: https://seoskills.io/install/"
         )
-    if result.get("stdout"):
-        sys.stdout.write(result["stdout"])
-    if result.get("stderr"):
-        sys.stderr.write(result["stderr"])
-    sys.exit(result.get("exit", 0))
+    # Write UTF-8 bytes: the output has characters such as § ¶ → that a Windows console code page cannot encode.
+    for stream, key in ((sys.stdout, "stdout"), (sys.stderr, "stderr")):
+        text = result.get(key)
+        if text:
+            stream.flush()
+            raw = getattr(stream, "buffer", None)
+            if raw is None:
+                stream.write(str(text))
+            else:
+                raw.write(str(text).encode("utf-8"))
+                raw.flush()
+    code = result.get("exit", 0)
+    sys.exit(code if isinstance(code, int) else 1)
 
 
 if __name__ == "__main__":

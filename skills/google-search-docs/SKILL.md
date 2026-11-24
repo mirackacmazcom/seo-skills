@@ -1,6 +1,6 @@
 ---
 name: google-search-docs
-description: Searches a local archive of Google's OFFICIAL documentation on search and SEO (3,600+ documents; Search Central docs and blog, spam policies, crawling/robots.txt, structured data, Search Console Help, How Search Works, the Search Quality Rater Guidelines, web.dev/Core Web Vitals, Chrome and PageSpeed Insights) and answers questions from Google's own text, with quotes and links. Use it when the user asks "what does Google officially say", "what do the docs say", "is X a ranking factor", "does X count as spam" or "does Google recommend X"; and whenever a rule, threshold or recommendation needs to be checked, or an SEO claim backed by a primary source, on topics such as canonical, noindex, robots.txt, hreflang, sitemaps, redirects, JavaScript SEO, structured data/schema, snippets, core updates, E-E-A-T, YMYL, AI Overviews, AI content, spam policies, Core Web Vitals or Search Console reports, even if the user never says "documentation". Do not write rules or quotes from memory. (Not for editing Google Docs; for the leak use google-leak, for patents google-patents.)
+description: Searches an archive of Google's OFFICIAL documentation on search and SEO (3,600+ documents; Search Central docs and blog, spam policies, crawling/robots.txt, structured data, Search Console Help, How Search Works, the Search Quality Rater Guidelines, web.dev/Core Web Vitals, Chrome and PageSpeed Insights) and answers questions from Google's own text, with quotes and links. Use it when the user asks "what does Google officially say", "what do the docs say", "is X a ranking factor", "does X count as spam" or "does Google recommend X"; and whenever a rule, threshold or recommendation needs to be checked, or an SEO claim backed by a primary source, on topics such as canonical, noindex, robots.txt, hreflang, sitemaps, redirects, JavaScript SEO, structured data/schema, snippets, core updates, E-E-A-T, YMYL, AI Overviews, AI content, spam policies, Core Web Vitals or Search Console reports, even if the user never says "documentation". Do not write rules or quotes from memory. (Not for editing Google Docs; for the leak use google-leak, for patents google-patents or google-ai-patents.)
 ---
 
 # Google official documentation archive
@@ -31,7 +31,7 @@ the script by its full path; it does not depend on the working directory:
 ```bash
 python3 scripts/gdocs.py search canonical duplicate            # full-text search; results by document, with matching sections
 python3 scripts/gdocs.py search '"crawl budget"' --in core     # exact phrase; current guidance only (no blog)
-python3 scripts/gdocs.py search core update --in blog --from 2024 --sort date   # blog, 2024 onwards, newest first
+python3 scripts/gdocs.py search '"core update"' --in blog --from 2024 --strict --sort date   # blog, 2024 onwards, newest first
 python3 scripts/gdocs.py search INP threshold --in perf        # web.dev + Chrome + PageSpeed Insights
 python3 scripts/gdocs.py show docs/essentials/spam-policies    # header + section list (whole text for short documents)
 python3 scripts/gdocs.py show docs/essentials/spam-policies --section 12        # one section (3,5-7 or "heading" also work)

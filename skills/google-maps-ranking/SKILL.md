@@ -62,7 +62,6 @@ When you need the context of an item you found through search, read only the rel
 - `references/google-research.md`: Google Research publications.
 - `references/patents.md`: The full list of the 326 patents, category by category (684 lines). Do not load all of it; use the `search` and `category` commands.
 - `references/scope-and-method.md`: How the archive was compiled, what it does not cover, the link check. Read it when the user asks about the reliability or completeness of the archive.
-- `data/candidate-patents-full-list.csv`: The raw list of 1,122 map and place patents, including those only weakly related to ranking. Look here only if nothing is found in the main list.
 
 ## How to work
 

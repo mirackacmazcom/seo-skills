@@ -32,7 +32,7 @@ Or only this skill:
 ```bash
 mkdir -p ~/.claude/skills
 curl -L https://seoskills.io/downloads/google-search-docs.zip -o /tmp/google-search-docs.zip
-unzip /tmp/google-search-docs.zip -d ~/.claude/skills/
+unzip -o /tmp/google-search-docs.zip -d ~/.claude/skills/
 ```
 
 Other agents (Codex, Cursor, Gemini CLI, Copilot, OpenCode): see the [install section](../../README.md#install).

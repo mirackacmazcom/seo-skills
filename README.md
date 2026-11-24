@@ -156,7 +156,7 @@ The skills are then available as `/seo-skills:google-leak`, `/seo-skills:google-
 ```bash
 mkdir -p ~/.claude/skills
 curl -L https://seoskills.io/downloads/seoskills-all.zip -o /tmp/seoskills-all.zip
-unzip /tmp/seoskills-all.zip -d ~/.claude/skills/
+unzip -o /tmp/seoskills-all.zip -d ~/.claude/skills/
 ```
 
 Replace `seoskills-all` with a skill name, such as `google-leak`, to install one skill. Claude Code picks up the new folders in the session you have open; if a skill does not appear, run `/reload-skills`.

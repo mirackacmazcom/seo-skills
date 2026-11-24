@@ -1,13 +1,13 @@
 ---
 name: google-patents
-description: Searches a local archive of Google's patents on search, ranking, crawling, indexing, site quality, links/PageRank, user behaviour, query understanding, web performance and AI/generative search (AI Overviews) — 54,101 publications in 10,491 families, full text — and answers questions from the patent text itself. Use this skill when the user mentions Google patents, a patent number (US…), an inventor (e.g. Navneet Panda), or concepts such as PageRank, Reasonable Surfer, Panda, site quality score, Navboost, TrustRank, Agent Rank, historical data, answer passages, knowledge panels or generative summaries. Also use it for questions like "does Google have a patent for X", "how does Google calculate X", "what does the patent say", "is there a patent behind this SEO claim" or "how do AI Overviews work", and whenever an SEO claim needs to be checked against a primary source, even if the user never uses the word "patent". Do not write patent numbers, dates or quotes from memory; always take them from this skill's database.
+description: Searches an archive of Google's patents on search, ranking, crawling, indexing, site quality, links/PageRank, user behaviour, query understanding, web performance and AI/generative search — 54,101 publications in 10,491 families, full text — and answers questions from the patent text itself. Use this skill when the user mentions Google patents, a patent number (US…), an inventor (e.g. Navneet Panda), or concepts such as PageRank, Reasonable Surfer, Panda, site quality score, Navboost, TrustRank, Agent Rank, historical data, answer passages, knowledge panels or generative summaries. Also use it for questions like "does Google have a patent for X", "how does Google calculate X", "what does the patent say", "is there a patent behind this SEO claim", and whenever an SEO claim needs to be checked against a primary source, even if the user never uses the word "patent". Do not write patent numbers, dates or quotes from memory; always take them from this skill's database. For Google's AI patents (AI Overviews, AI Mode, Gemini, DeepMind, query fan-out) use google-ai-patents; for other companies' LLM patents use llm-patents.
 ---
 
 # Google search patents archive
 
 This skill gathers Google's search-related patent publications (including those assigned to Google or held by
 affiliated companies) into a single searchable database: 54,101 publications in 10,491 patent families; the claims
-and description of 26,776 publications are stored as full text. Priority dates run from the 1990s to 2026.
+and description of 26,776 publications are stored as full text. Priority dates run from 1961 to 2026; most families are from the 2000s onwards.
 
 The goal: answer the user's question based on **what the patent actually says**. In the SEO world patents are very
 often passed on as "Google does this", whereas a patent only shows that Google **described a method and sought

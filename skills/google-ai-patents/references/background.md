@@ -13,7 +13,7 @@
 Compiled on 17 November 2026. Sources:
 
 - **Google Patents Public Data (BigQuery, `patents-public-data.patents.publications`)**: bibliographic data, abstract,
-  CPC and the full text of US publications (36,410 publications). The data covers publications up to 17 September 2026.
+  CPC and the full text of US publications (36,403 publications). The data covers publications up to 17 September 2026.
 - **USPTO assignment records (`uspto_oce_assignment`)**: US patents assigned to Google/DeepMind/Waymo/X/Verily (the
   dataset ends in early 2017).
 - **The Google Patents interface**: US publications in AI classes whose current owner is Google were crawled in

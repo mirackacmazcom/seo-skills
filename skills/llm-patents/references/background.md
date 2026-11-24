@@ -30,7 +30,7 @@ patent texts are stored compressed inside the database and are read with `patent
 
 A family counts as `weak-match` if no matching member of the family has the term in its title/abstract/claims
 (it occurs only in the description), or if its priority is before 2018 and it matched only on the abbreviation
-"LLM"/"大模型". About 18 thousand families fall into this group; hundreds of old US patents with priorities from
+"LLM"/"大模型". About 22 thousand families fall into this group; hundreds of old US patents with priorities from
 1890–1975 are OCR noise and are always weak. `--core` removes them.
 
 ## Company label

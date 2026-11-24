@@ -3,7 +3,7 @@
 Generated automatically from the company layer of the archive. Each line is one family; the number shown is the family's representative.
 Labels: T = the family has a granted US patent, B = application/foreign publication only, D = acquired (the original assignee is another company). A dash in place of the year means no priority date is recorded.
 
-## OpenAI (111 families)
+## OpenAI (113 families)
 
 - `US12712833B1` (—, B) Private inference for generative artificial intelligence systems
 - `US20260244402A1` (—, B) Compute in memory architecture that allows flexible floating-point operations

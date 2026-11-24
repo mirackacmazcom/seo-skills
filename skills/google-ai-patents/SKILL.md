@@ -8,7 +8,7 @@ description: Searches an archive of the AI patents of Google and the Alphabet co
 This skill gathers the AI-related patent publications of Google and the Alphabet companies into a single searchable
 database: 82,806 publications, 14,495 patent families, all countries. Claims and description are stored in full for
 14,488 families (US publications from BigQuery; ~1,000 families without a US member from Google Patents pages, 75 of
-them Google's English machine translation). Priority dates run from 1986 to 2025; the newest publication is from
+them Google's English machine translation). Priority dates run from 1986 to 2026; the newest publication is from
 17 September 2026.
 
 The scope is deliberately broad: besides machine learning, neural networks, language and speech, image recognition,
@@ -40,7 +40,7 @@ python3 scripts/patent.py search '"synthetic queries"' --in claims --granted  # 
 python3 scripts/patent.py show US11769017B1                    # bibliographic data + abstract + first independent claim + section headings
 python3 scripts/patent.py claims US11769017B1 --independent    # independent claims (the protected core)
 python3 scripts/patent.py passages US11769017B1 linkify verification   # most relevant description paragraphs, numbered [¶n]
-python3 scripts/patent.py find US11769017B1 citation           # does the phrase occur in this patent; in which claims and paragraphs
+python3 scripts/patent.py find US11769017B1 "search result"    # does the phrase occur in this patent; in which claims and paragraphs
 python3 scripts/patent.py family US11769017B1                  # publications in the same family (continuations, WO/EP)
 python3 scripts/patent.py inventor Noam Shazeer                # an inventor's patents
 python3 scripts/patent.py topics                               # topic labels; topics <label> lists families in that topic

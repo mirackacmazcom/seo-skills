@@ -17,7 +17,7 @@ was built.
 
 ## 1. What the archive is
 
-An offline copy, captured on 11 November 2026, of the pages Google **itself has published** on search, SEO, ranking,
+A copy, captured on 11 November 2026 and searched on seoskills.io, of the pages Google **itself has published** on search, SEO, ranking,
 technical SEO, performance and AI: 3,630 documents, about 3.3 million words of English text, Google's own Turkish
 versions of 1,086 pages, and 471 blog posts published only in another language.
 
