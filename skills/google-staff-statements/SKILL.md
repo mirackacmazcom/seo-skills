@@ -20,7 +20,7 @@ and read the message that was being answered as well.
 The archive lives on seoskills.io, so nothing is downloaded. The search tool sends its arguments to
 api.seoskills.io and prints the answer. It needs internet access. If it reports that it cannot reach the API, run the command
 once more; if it still fails, tell the user that their agent seems to block network access and that the SEO
-Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent to run the search and are not stored.
+Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent only to run the search. They are not logged or linked to you; results are cached for up to an hour so repeat searches are fast.
 If the tool says there were too many searches, wait a minute before the next one.
 
 ## Search tool
@@ -83,7 +83,9 @@ What you need to know:
     `participants: … — no speaker separation`. This shows the person took part in the recording, but **not** that
     they said the matching sentence: the host, a guest or another Google employee may have said it. Before
     attributing it, read the surrounding text with `show --at`: does the speaker introduce themselves, who asks the
-    question, who answers. If it is still unclear, say "it is said in a video X took part in; the speaker is not
+    question, who answers. When the text itself names the speaker ("JOHN MUELLER:") or the person is the only
+    participant, attribute it plainly, without a hedge. On a video, always call `show` with `--at` or `--unit`; a
+    bare `show <id>` prints only the list of units. If it is still unclear, say "it is said in a video X took part in; the speaker is not
     certain from the transcript". For text tied to the person with certainty only, use `--strict`.
   - Press interviews (`interview/report`) are the journalist's text; even words in quotation marks may not be
     verbatim. Present them as "according to what X told Search Engine Land". Help Community thread pages (`forum`)
@@ -145,9 +147,10 @@ What each length contains:
 | Quotes | None needed | One short quote where the exact wording decides | A short quote per source |
 | Layout | Plain sentences | Verdict sentence, a few short bullets | Short headings or bold labels are fine |
 | What the source cannot show | Inside a sentence, only if it changes the verdict | One sentence | One short paragraph |
-| Next step | A clause, only for a decision question | One or two sentences | One or two sentences, plus what the sources suggest when read together |
+| Next step (only when the rule below asks for one) | A clause | One or two sentences | One or two sentences, plus what the sources suggest when read together |
 
-These sizes replace any other word count in this file. A busy reader wants the verdict and the decisive source,
+These sizes, and the numbers of sources, quotes and bullets, replace any other count in this file. The line of
+links at the end does not count toward the size. A busy reader wants the verdict and the decisive source,
 not everything you read: leave side findings out and offer them in one closing line ("I can also go into X").
 
 Where a setting comes from, strongest first:
@@ -159,9 +162,11 @@ Where a setting comes from, strongest first:
 
 People say this in their own words, in any language. Map them like this, and change only what was asked for:
 
-- "shorter", "short answers", "just the summary", "in one line", "kısa tut" → `brief`
+- "short answers", "just the summary", "in one line", "kısa tut" → `brief`
+- "shorter", "a bit shorter" about an answer you just gave → about half its length, same sources
 - "more detail", "the long version", "every source", "full breakdown" → `detailed`
-- "no links", "skip the sources", "without quotes", "kaynak gösterme" → sources `off`
+- "no links" → leave out the URLs only; names, numbers and quotes stay
+- "skip the sources", "without quotes", "no citations", "kaynak gösterme" → sources `off`
 - "show me the sources", "where does that come from" → sources `on`
 
 A request about one answer ("give me the long version of that", "shorten this") applies to that answer. A request
@@ -170,10 +175,10 @@ conversation. If you cannot tell, treat it as a preference; the user can change 
 
 How the settings combine:
 
-- Sources `off`, at any length: say what the answer rests on in plain words inside the sentence. Names that help
-  the user look it up stay: a person and year ("John Mueller said in 2022"), a page ("Google's spam policy"), a
-  patent in words ("a 2012 Google patent on site quality"), a field ("a field called hostAge"). Quotes, links,
-  claim and paragraph numbers, platforms and source lists are left out.
+- Sources `off`, at any length: say what the answer rests on in plain words inside the sentence, and keep the one
+  handle the user needs to look it up: a person and year ("John Mueller said in 2022"), a page name ("Google's
+  spam policy"), a patent number ("a 2012 Google patent, US9031929B1"), a field name (`PerDocData.hostAge`).
+  Quotes, links, claim and paragraph numbers, platforms and source lists are left out.
 - `brief` with sources on: the answer plus the one strongest source (name, date, link). If the verdict needs two
   facts from two pages, name both in the sentence and link the one that carries the verdict.
 - When the user changes a setting right after an answer, rewrite that answer from what you already found. Do not
@@ -184,6 +189,10 @@ The settings are the same for every SEO Skills skill. No setting changes these r
 - Take every fact, number, date and quote from the search tool, never from memory. With sources off you still
   search first; you only leave the citations out, and you give them as soon as the user asks.
 - Keep what the source says apart from your own inference.
+- If your environment limits verbatim quotation (for example one short quote per answer), quote the single most
+  decisive sentence and report the rest in your own words, keeping the modal verbs ("may", "can", "in some
+  implementations") and the locator (field name, claim or paragraph number, section, date). Never write an
+  approximate quote.
 - Say once what the source cannot show, whenever that changes the conclusion: this archive records what was
   written or said, not how much weight it carries in ranking today, and older material may be outdated. Do not
   repeat the caveat in every bullet.
@@ -200,7 +209,8 @@ what the source says. Build it from what the tool returned in this conversation 
 judgement; do not bring in facts about Google from memory. Skip it when it would only repeat your first sentence,
 and when the user only asks what a source says. If this archive is silent on the practical part of the question,
 say so in one sentence and name where the answer would be (Google's official documentation, or another SEO Skills
-skill if it is installed) instead of forcing advice out of it.
+skill) instead of forcing advice out of it. If that other skill is installed, use it: one or two searches there
+for the practical part, reported under its own label.
 
 **Several SEO Skills skills installed.** Pick by what the question needs: a rule, threshold or recommendation →
 `google-search-docs`; who said what and when → `google-staff-statements`; what data Google stores →
@@ -253,8 +263,9 @@ For every statement:
   and the employee's statement separately; if they contradict each other, say so with dates.
 - If you are drawing an inference ("in practice this means …"), say that it is your inference.
 
-**Keep it short.** Default format: the direct answer in the first sentence; then two to five bullets, each one
-statement (who, where, when, in reply to what, short quote); a one-sentence note on timing/context if needed; source
+**Keep it short.** Default format: the direct answer in the first sentence; then one bullet per statement (who,
+where, when, in reply to what; a quote where the wording decides), as many as the length setting allows; a
+changed-mind timeline may use one more bullet than usual; a one-sentence note on timing/context if needed; source
 links. Length follows the answer settings. Most questions are answered with 5–10 commands: run `show` only for
 the two or three statements you will quote; a statement you mention in passing may be paraphrased from the search
 excerpt.

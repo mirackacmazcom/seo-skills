@@ -278,7 +278,7 @@ Claude apps: **Settings → Connectors → Add custom connector** and paste the 
 
 <p align="center"><img src="assets/how-it-works.png" alt="How it works: your question goes to the skill, the skill queries api.seoskills.io, which searches the archive and returns a sourced answer" width="100%"></p>
 
-A skill is a folder with a `SKILL.md` file, reference notes and a small Python script. The archives behind these skills are several gigabytes, so they stay on seoskills.io: the script sends its arguments to `api.seoskills.io`, where the search tool runs, and prints the answer. Nothing is downloaded, search terms are not stored, and the script uses only the Python standard library. Read `scripts/` in any skill folder to see exactly what it sends.
+A skill is a folder with a `SKILL.md` file, reference notes and a small Python script. The archives behind these skills are several gigabytes, so they stay on seoskills.io: the script sends its arguments to `api.seoskills.io`, where the search tool runs, and prints the answer. Nothing is downloaded, search terms are not logged or linked to you (results are cached for up to an hour so repeat searches are fast), and the script uses only the Python standard library. Read `scripts/` in any skill folder to see exactly what it sends.
 
 ```
 skills/google-leak/

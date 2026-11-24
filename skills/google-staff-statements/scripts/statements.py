@@ -7,7 +7,8 @@ exactly as the search tool on the server prints it. Standard library only.
     python3 scripts/statements.py --help
     python3 scripts/statements.py <command> [options]
 
-Your search terms are sent to api.seoskills.io to run the search. They are not stored.
+Your search terms are sent to api.seoskills.io only to run the search. They are not logged or linked to you;
+results are cached for up to an hour so repeat searches are fast.
 Set SEOSKILLS_API to use another server.
 """
 import json
@@ -26,7 +27,7 @@ def main():
     req = urllib.request.Request(
         f"{API}/v1/{SKILL}",
         data=json.dumps({"args": args}).encode("utf-8"),
-        headers={"Content-Type": "application/json", "User-Agent": f"seoskills-skill/1.2 ({SKILL})"},
+        headers={"Content-Type": "application/json", "User-Agent": f"seoskills-skill/1.2.0 ({SKILL})"},
         method="POST",
     )
     try:

@@ -21,7 +21,7 @@ The value of this skill is that it can tie claims of the "Google Maps ranks like
 The archive lives on seoskills.io, so nothing is downloaded. The search tool sends its arguments to
 api.seoskills.io and prints the answer. It needs internet access. If it reports that it cannot reach the API, run the command
 once more; if it still fails, tell the user that their agent seems to block network access and that the SEO
-Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent to run the search and are not stored.
+Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent only to run the search. They are not logged or linked to you; results are cached for up to an hour so repeat searches are fast.
 If the tool says there were too many searches, wait a minute before the next one.
 
 ## Tool
@@ -103,9 +103,10 @@ What each length contains:
 | Quotes | None needed | One short quote where the exact wording decides | A short quote per source |
 | Layout | Plain sentences | Verdict sentence, a few short bullets | Short headings or bold labels are fine |
 | What the source cannot show | Inside a sentence, only if it changes the verdict | One sentence | One short paragraph |
-| Next step | A clause, only for a decision question | One or two sentences | One or two sentences, plus what the sources suggest when read together |
+| Next step (only when the rule below asks for one) | A clause | One or two sentences | One or two sentences, plus what the sources suggest when read together |
 
-These sizes replace any other word count in this file. A busy reader wants the verdict and the decisive source,
+These sizes, and the numbers of sources, quotes and bullets, replace any other count in this file. The line of
+links at the end does not count toward the size. A busy reader wants the verdict and the decisive source,
 not everything you read: leave side findings out and offer them in one closing line ("I can also go into X").
 
 Where a setting comes from, strongest first:
@@ -117,9 +118,11 @@ Where a setting comes from, strongest first:
 
 People say this in their own words, in any language. Map them like this, and change only what was asked for:
 
-- "shorter", "short answers", "just the summary", "in one line", "kısa tut" → `brief`
+- "short answers", "just the summary", "in one line", "kısa tut" → `brief`
+- "shorter", "a bit shorter" about an answer you just gave → about half its length, same sources
 - "more detail", "the long version", "every source", "full breakdown" → `detailed`
-- "no links", "skip the sources", "without quotes", "kaynak gösterme" → sources `off`
+- "no links" → leave out the URLs only; names, numbers and quotes stay
+- "skip the sources", "without quotes", "no citations", "kaynak gösterme" → sources `off`
 - "show me the sources", "where does that come from" → sources `on`
 
 A request about one answer ("give me the long version of that", "shorten this") applies to that answer. A request
@@ -128,10 +131,10 @@ conversation. If you cannot tell, treat it as a preference; the user can change 
 
 How the settings combine:
 
-- Sources `off`, at any length: say what the answer rests on in plain words inside the sentence. Names that help
-  the user look it up stay: a person and year ("John Mueller said in 2022"), a page ("Google's spam policy"), a
-  patent in words ("a 2012 Google patent on site quality"), a field ("a field called hostAge"). Quotes, links,
-  claim and paragraph numbers, platforms and source lists are left out.
+- Sources `off`, at any length: say what the answer rests on in plain words inside the sentence, and keep the one
+  handle the user needs to look it up: a person and year ("John Mueller said in 2022"), a page name ("Google's
+  spam policy"), a patent number ("a 2012 Google patent, US9031929B1"), a field name (`PerDocData.hostAge`).
+  Quotes, links, claim and paragraph numbers, platforms and source lists are left out.
 - `brief` with sources on: the answer plus the one strongest source (name, date, link). If the verdict needs two
   facts from two pages, name both in the sentence and link the one that carries the verdict.
 - When the user changes a setting right after an answer, rewrite that answer from what you already found. Do not
@@ -142,6 +145,10 @@ The settings are the same for every SEO Skills skill. No setting changes these r
 - Take every fact, number, date and quote from the search tool, never from memory. With sources off you still
   search first; you only leave the citations out, and you give them as soon as the user asks.
 - Keep what the source says apart from your own inference.
+- If your environment limits verbatim quotation (for example one short quote per answer), quote the single most
+  decisive sentence and report the rest in your own words, keeping the modal verbs ("may", "can", "in some
+  implementations") and the locator (field name, claim or paragraph number, section, date). Never write an
+  approximate quote.
 - Say once what the source cannot show, whenever that changes the conclusion: this archive records what was
   written or said, not how much weight it carries in ranking today, and older material may be outdated. Do not
   repeat the caveat in every bullet.
@@ -158,7 +165,8 @@ what the source says. Build it from what the tool returned in this conversation 
 judgement; do not bring in facts about Google from memory. Skip it when it would only repeat your first sentence,
 and when the user only asks what a source says. If this archive is silent on the practical part of the question,
 say so in one sentence and name where the answer would be (Google's official documentation, or another SEO Skills
-skill if it is installed) instead of forcing advice out of it.
+skill) instead of forcing advice out of it. If that other skill is installed, use it: one or two searches there
+for the practical part, reported under its own label.
 
 **Several SEO Skills skills installed.** Pick by what the question needs: a rule, threshold or recommendation →
 `google-search-docs`; who said what and when → `google-staff-statements`; what data Google stores →
@@ -192,7 +200,8 @@ Language, length and citations follow the answer settings above.
 - **Separate what the patent says from interpretation.** Do not say "Google uses X". Say instead "Google has a patent that describes X (US…, priority 20xx)". Matching a patent to a product feature (e.g. US20190340537A1 ↔ "Your match") is interpretation; present it as such.
 - **Flag secondary sources in plain words.** The archive labels each employee statement: `primary` (Google's own page was read), `SER+original` (Search Engine Roundtable reports the quote and links to the original post) and `secondary` (only a news report). Official documents carry `✔` (page opened and checked), `✔a` (taken from the archive of official documentation) or `(s)` (seen in a search result only, not verified). Do not show these labels to the user; write "reported by Search Engine Roundtable, with a link to the original post" or "from a news report only, not verified". When the archive paraphrases a statement, paraphrase it too and do not put it in quotation marks.
 - When the user has a plan, or asks whether something affects ranking, close with what to do: Google's official recommendation first, where one exists. Present ideas drawn from patents separately, as "possible signal, not a proven factor".
-- A question the first search answers fully needs no further searches. An answer that says "Google has not said" should be short: the verdict, the nearest real source in one bullet, and what to do.
+- A question the first search answers fully needs no further searches.
+- **When the verdict is "Google has not said"**, use this shape and nothing more, whatever the length setting: the verdict in one sentence; the nearest real source in one bullet (say what it covers instead); what to do. If the only official page on the topic is listed by title alone, say "the archive has no ranking statement from Google's page on this" and do not build on it.
 
 ### Example
 

@@ -47,4 +47,4 @@ Answers come in the language you write in, short and with sources. Ask for a bri
 - `references/`: topic map and background notes the agent can read
 - `scripts/patent.py`: sends the search to api.seoskills.io and prints the result, for example `python3 scripts/patent.py search reasonable surfer`
 
-The archive itself stays on seoskills.io. Search terms are sent to run the search and are not stored.
+The archive itself stays on seoskills.io. Search terms are sent only to run the search. They are not logged or linked to you; results are cached for up to an hour so repeat searches are fast.
