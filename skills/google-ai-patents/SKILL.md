@@ -26,7 +26,8 @@ The archive lives on seoskills.io, so nothing is downloaded. The search tool sen
 api.seoskills.io and prints the answer. It needs internet access. If it reports that it cannot reach the API, run the command
 once more; if it still fails, tell the user that their agent seems to block network access and that the SEO
 Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent only to run the search. They are not logged or linked to you; results are cached for up to an hour so repeat searches are fast.
-If the tool says there were too many searches, wait a minute before the next one.
+If the tool says there were too many searches, wait a minute before the next one. If it says the daily limit is
+reached (2,000 searches a day), tell the user; it resets at 00:00 UTC.
 
 ## Search tool
 

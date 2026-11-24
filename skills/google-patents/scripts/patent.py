@@ -50,7 +50,9 @@ def main():
         except Exception:
             message = ""
         if e.code == 429:
-            sys.exit("Too many searches in a short time. Wait a minute and run the command again.")
+            # The server says which limit was hit: 60 searches a minute, or the daily limit.
+            sys.exit(message if message.startswith("Daily limit") else
+                     "Too many searches in a short time. Wait a minute and run the command again.")
         sys.exit(f"The search API returned an error ({e.code}). {message}".strip())
     except ValueError:
         sys.exit(
