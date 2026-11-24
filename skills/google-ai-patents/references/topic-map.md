@@ -45,7 +45,7 @@ verified with the tool. The lists are starting points; before answering, reopen 
 - `US20250348485A1` (and `WO2025240274A1`) "Generative model based decomposition of input query into sub-queries and
   generation of comprehensive response based on responses to sub-queries" (priority 2024, application). Claim 1: a
   generative model decomposes the query into sub-queries and the tools to use for each sub-query; a comprehensive
-  response is generated from the sub-responses.
+  response is generated from the sub-responses, checked with a "critique response" and refined if it falls short.
 - `US20240289407A1` "Search with stateful chat" (priority 2023, application). Claim 1: synthetic queries are generated
   from the query + user/device context; the document set is selected from documents responsive to both the original
   query and the synthetic queries.

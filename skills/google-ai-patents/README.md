@@ -1,6 +1,6 @@
 # Google AI Patents skill for Claude and AI agents
 
-<p align="center"><img src="../../assets/cards/google-ai-patents.png" alt="" width="560"></p>
+<p align="center"><img src="../../assets/cards/google-ai-patents.png" alt="Google AI Patents skill for Claude and AI agents" width="560"></p>
 
 Search 82,806 AI patent publications from Google and Alphabet: generative search, AI Overviews, AI Mode, query fan-out and source selection.
 
@@ -36,6 +36,10 @@ unzip -o /tmp/google-ai-patents.zip -d ~/.claude/skills/
 ```
 
 Other agents (Codex, Cursor, Gemini CLI, Copilot, OpenCode): see the [install section](../../README.md#install).
+
+## Answer settings
+
+Answers come in the language you write in, short and with sources. Ask for a brief or detailed answer, a fixed language, or no sources: see [answer settings](../../README.md#answer-settings).
 
 ## What is in this folder
 

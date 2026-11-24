@@ -17,9 +17,9 @@ may not appear in the person's reply: if there are few results, add `--in-questi
 | Links | `backlinks`, `"link building"`, `nofollow OR ugc OR sponsored`, `"toxic links"`, `disavow`, `"link spam"` |
 | Core updates / ranking | `"core update"`, `"ranking systems"`, `"helpful content"`, `HCU`, `recovery`, `"site-wide"` |
 | E-E-A-T / authors | `E-E-A-T OR EEAT OR EAT`, `"author bio"`, `expertise`, `"quality raters"` |
-| AI content | `"AI content" OR "AI-generated"`, `"scaled content"`, `LLM`, `ChatGPT`, `"AI Overviews" OR "AI Mode"` |
+| AI content | `"AI content" OR "AI-generated"`, `"automatically generated"`, `"auto-generated"` (the wording before 2023), `"scaled content"`, `LLM`, `ChatGPT`, `"AI Overviews" OR "AI Mode"` |
 | Site reputation / parasite SEO | `"site reputation abuse"`, `"parasite SEO"`, `"third-party content"` |
-| Subdomain / subfolder | `subdomain subfolder`, `subdirectory`, `"separate site"` |
+| Subdomain / subfolder | `subdomain subdirectory` (far more results than `subfolder`), `subdomain subfolder`, `"separate site"` |
 | Core Web Vitals | `"core web vitals" OR CWV`, `LCP OR INP OR CLS`, `"page experience"`, `pagespeed` |
 | Structured data | `"structured data"`, `schema`, `"rich results"`, `json-ld` |
 | Search Console | `"search console"`, `GSC`, `"URL inspection"`, `impressions`, `"performance report"` |

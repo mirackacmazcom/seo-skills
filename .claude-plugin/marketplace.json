@@ -3,17 +3,17 @@
   "owner": { "name": "SEO Skills", "url": "https://seoskills.io" },
   "metadata": {
     "description": "Free SEO skills for Claude Code that answer from Google patents, the leaked Content Warehouse docs, official documentation and staff statements.",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "seo-skills",
       "source": "./",
       "description": "Seven free SEO skills that answer from primary sources, with every answer sourced.",
-      "version": "1.1.0",
+      "version": "1.2.0",
       "homepage": "https://seoskills.io",
       "category": "productivity",
-      "keywords": ["seo", "google-leak", "google-patents", "ai-overviews", "local-seo"]
+      "keywords": ["seo", "claude-code", "mcp", "google-leak", "google-patents", "ai-overviews", "local-seo", "technical-seo"]
     }
   ]
 }

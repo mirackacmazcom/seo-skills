@@ -208,7 +208,7 @@ Terms: `"title link"`, `"meta description"`, `snippet`, `"site name"`, `favicon`
   `merchant-listing`, `product-variants`, `review-snippet`, `local-business`, `organization`, `event`, `recipe`,
   `video`, `job-posting`, `qapage`, `profile-page`, `discussion-forum`, `dataset`, `course`, `software-app`,
   `return-policy`, `shipping-policy`, `loyalty-program`, `paywalled-content`, `speakable`, `carousel`…
-  Full list: `list docs --path structured-data --limit 0`.
+  Full list: `list docs --path structured-data --limit 200`.
 - `…/generate-structured-data-with-javascript`
 - Help: `help/7552505` (rich result reports), `help/9166415` (unparsable data), `help/7445569`
   (Rich Results Test)
@@ -319,7 +319,7 @@ Terms: `pagination`, `"load more"`, `"infinite scroll"`, `"product variants"`, `
   `help/9370220`, `help/12919198` (bulk data export)
 - API: `developers.google.com/webmaster-tools`, `…/webmaster-tools/v1/searchanalytics/query`,
   `…/webmaster-tools/v1/urlInspection.index/inspect`; Indexing API: `search/apis/indexing-api/v3/using-api`
-- All of them: `list sc-help --limit 0`
+- All of them: `list sc-help --limit 200`
 
 Note: most Search Console Help pages carry no date from Google; the header shows only the date the page was archived.
 For help pages of other products use `list help-other` (Merchant Center, Web Search, News, Tag Manager and others;

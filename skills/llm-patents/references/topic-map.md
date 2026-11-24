@@ -24,9 +24,17 @@ listed are starting points; open and verify each one with `show` / `claims` / `p
 Terms: `augmented search`, `search engine`, `retrieval augmented`, `citation`, `source`, `file search`,
 `document intelligence`, `embedding`.
 
-- Perplexity `US20250291863A1` Augmented search engine; `US20250363097A1` Compact search client for augmented search.
+- Perplexity `US12730849B2` Augmented search engine (granted 2026; earlier published as `US20250291863A1`): the
+  description covers merging internal-index and external search results, filtering and re-ranking; Claim 1 is about
+  deciding whether to ask the user a follow-up question. `US20250363097A1` Compact search client for augmented search.
+  This is the only Perplexity search family in the archive; say so when an answer rests on it alone.
+- OpenAI `US12619603B2` Distilled generative response engine (granted): the OpenAI patent on web search answers with
+  citations. Claim 1 starts with selecting sources from search results; the description's "language model program"
+  tells the engine to select relevant search results as sources [¶64] and to cite the pages the answer was derived
+  from [¶67].
 - Mistral `US12645742B1` RAG-based product assistant; `US12651113B1` Document intelligence system.
-- OpenAI `US20260236435A1` File search tool integrated with virtual assistant; `US12073299B2` text/code embeddings
+- OpenAI `US20260236435A1` File search tool integrated with virtual assistant (search over files the user uploads,
+  not over the web); `US12073299B2` text/code embeddings
   with contrastive pre-training (the basis of semantic search).
 - Cohere `US20260228531A1` dataset filtering.
 

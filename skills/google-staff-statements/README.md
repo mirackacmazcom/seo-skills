@@ -1,6 +1,6 @@
 # Google Staff Statements skill for Claude and AI agents
 
-<p align="center"><img src="../../assets/cards/google-staff-statements.png" alt="" width="560"></p>
+<p align="center"><img src="../../assets/cards/google-staff-statements.png" alt="Google Staff Statements skill for Claude and AI agents" width="560"></p>
 
 Search 47,388 public statements by Google's search team, with the date, the question being answered and a link to the source.
 
@@ -36,6 +36,10 @@ unzip -o /tmp/google-staff-statements.zip -d ~/.claude/skills/
 ```
 
 Other agents (Codex, Cursor, Gemini CLI, Copilot, OpenCode): see the [install section](../../README.md#install).
+
+## Answer settings
+
+Answers come in the language you write in, short and with sources. Ask for a brief or detailed answer, a fixed language, or no sources: see [answer settings](../../README.md#answer-settings).
 
 ## What is in this folder
 

@@ -13,6 +13,7 @@ Set SEOSKILLS_API to use another server.
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -25,12 +26,20 @@ def main():
     req = urllib.request.Request(
         f"{API}/v1/{SKILL}",
         data=json.dumps({"args": args}).encode("utf-8"),
-        headers={"Content-Type": "application/json", "User-Agent": f"seoskills-skill/1.1 ({SKILL})"},
+        headers={"Content-Type": "application/json", "User-Agent": f"seoskills-skill/1.2 ({SKILL})"},
         method="POST",
     )
     try:
-        with urllib.request.urlopen(req, timeout=90) as r:
-            body = r.read()
+        try:
+            with urllib.request.urlopen(req, timeout=90) as r:
+                body = r.read()
+        except urllib.error.HTTPError:
+            raise
+        except (urllib.error.URLError, ConnectionError):
+            # A dropped connection is usually the search engine restarting. Try once more before giving up.
+            time.sleep(4)
+            with urllib.request.urlopen(req, timeout=90) as r:
+                body = r.read()
         result = json.loads(body.decode("utf-8"))
         if not isinstance(result, dict):
             raise ValueError("unexpected response")
@@ -50,8 +59,8 @@ def main():
     except (urllib.error.URLError, TimeoutError, OSError) as e:
         sys.exit(
             f"Could not reach {API} ({e}).\n"
-            "This skill needs internet access to run its searches. If your agent runs in a sandbox without it,\n"
-            "connect the SEO Skills MCP server instead: https://seoskills.io/install/"
+            "If this was a one-off, run the command again in a few seconds. The skill needs internet access; if\n"
+            "your agent runs in a sandbox without it, connect the SEO Skills MCP server: https://seoskills.io/install/"
         )
     # Write UTF-8 bytes: the output has characters such as § ¶ → that a Windows console code page cannot encode.
     for stream, key in ((sys.stdout, "stdout"), (sys.stderr, "stderr")):

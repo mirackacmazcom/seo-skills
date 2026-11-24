@@ -18,9 +18,9 @@ patent numbers recalled from memory are often wrong.
 ## How searches run
 
 The archive lives on seoskills.io, so nothing is downloaded. The search tool sends its arguments to
-api.seoskills.io and prints the answer. It needs internet access; if it reports that it cannot reach the API,
-tell the user that their agent blocks network access and that the SEO Skills MCP server
-(https://mcp.seoskills.io/mcp) offers the same tools. Search terms are sent to run the search and are not stored.
+api.seoskills.io and prints the answer. It needs internet access. If it reports that it cannot reach the API, run the command
+once more; if it still fails, tell the user that their agent seems to block network access and that the SEO
+Skills MCP server (https://mcp.seoskills.io/mcp, set-up at https://seoskills.io/install/) offers the same tools. Search terms are sent to run the search and are not stored.
 If the tool says there were too many searches, wait a minute before the next one.
 
 ## Search tool
@@ -112,10 +112,99 @@ What you need to know:
    (see `references/background.md` for the limits of the coverage); but attributing to a patent something that is
    not in the archive misleads the user.
 
+## Answer settings
+
+The user decides how the answer looks. Three things can be set:
+
+| Setting | Default | The user can ask for |
+|---|---|---|
+| Language | The language of the user's latest message | A fixed language: "always answer in Dutch" |
+| Length | `standard` | `brief` or `detailed` |
+| Sources | `on`: quotes, source names, dates and links | `off`: no quotes, links, numbered citations or source list |
+
+What each length contains:
+
+| | `brief` | `standard` (default) | `detailed` |
+|---|---|---|---|
+| Size | Two or three sentences, at most 60 words | About 120–250 words | Up to about 600 words |
+| Sources shown | The one strongest | The one to three the answer turns on | Up to six, grouped by theme |
+| Quotes | None needed | One short quote where the exact wording decides | A short quote per source |
+| Layout | Plain sentences | Verdict sentence, a few short bullets | Short headings or bold labels are fine |
+| What the source cannot show | Inside a sentence, only if it changes the verdict | One sentence | One short paragraph |
+| Next step | A clause, only for a decision question | One or two sentences | One or two sentences, plus what the sources suggest when read together |
+
+These sizes replace any other word count in this file. A busy reader wants the verdict and the decisive source,
+not everything you read: leave side findings out and offer them in one closing line ("I can also go into X").
+
+Where a setting comes from, strongest first:
+
+1. What the user says in the conversation.
+2. A line that starts with `SEO Skills:` in your standing instructions (CLAUDE.md, AGENTS.md, project or custom
+   instructions), for example `SEO Skills: detailed answers, sources off, always answer in Dutch`.
+3. The defaults above.
+
+People say this in their own words, in any language. Map them like this, and change only what was asked for:
+
+- "shorter", "short answers", "just the summary", "in one line", "kısa tut" → `brief`
+- "more detail", "the long version", "every source", "full breakdown" → `detailed`
+- "no links", "skip the sources", "without quotes", "kaynak gösterme" → sources `off`
+- "show me the sources", "where does that come from" → sources `on`
+
+A request about one answer ("give me the long version of that", "shorten this") applies to that answer. A request
+worded as a preference ("keep it short", "no sources please", "from now on…") holds for the rest of the
+conversation. If you cannot tell, treat it as a preference; the user can change it back in a word.
+
+How the settings combine:
+
+- Sources `off`, at any length: say what the answer rests on in plain words inside the sentence. Names that help
+  the user look it up stay: a person and year ("John Mueller said in 2022"), a page ("Google's spam policy"), a
+  patent in words ("a 2012 Google patent on site quality"), a field ("a field called hostAge"). Quotes, links,
+  claim and paragraph numbers, platforms and source lists are left out.
+- `brief` with sources on: the answer plus the one strongest source (name, date, link). If the verdict needs two
+  facts from two pages, name both in the sentence and link the one that carries the verdict.
+- When the user changes a setting right after an answer, rewrite that answer from what you already found. Do not
+  search again unless the new version needs something you have not read.
+
+The settings are the same for every SEO Skills skill. No setting changes these rules:
+
+- Take every fact, number, date and quote from the search tool, never from memory. With sources off you still
+  search first; you only leave the citations out, and you give them as soon as the user asks.
+- Keep what the source says apart from your own inference.
+- Say once what the source cannot show, whenever that changes the conclusion: this archive records what was
+  written or said, not how much weight it carries in ranking today, and older material may be outdated. Do not
+  repeat the caveat in every bullet.
+
+**Language.** Answer in the language the user writes in, even though this skill, the tool output and the sources
+are in English. Search with English terms. Translate ordinary terms; keep quotes, titles, field names and patent
+numbers in the original, and add a short gloss in the user's language only where a quote would not be clear
+without it. Long titles may be shortened once the number or link is given.
+
+**Close with the next step.** People usually ask because they are about to change something. Close with practical
+advice when the user states a plan or a goal ("I'm planning to…", "we want…", "my client wants…", "should I…",
+"is it worth…") or asks whether something affects ranking or visibility. Mark it as your suggestion, apart from
+what the source says. Build it from what the tool returned in this conversation plus ordinary professional
+judgement; do not bring in facts about Google from memory. Skip it when it would only repeat your first sentence,
+and when the user only asks what a source says. If this archive is silent on the practical part of the question,
+say so in one sentence and name where the answer would be (Google's official documentation, or another SEO Skills
+skill if it is installed) instead of forcing advice out of it.
+
+**Several SEO Skills skills installed.** Pick by what the question needs: a rule, threshold or recommendation →
+`google-search-docs`; who said what and when → `google-staff-statements`; what data Google stores →
+`google-leak`; how a method is described → `google-patents` (search), `google-ai-patents` (AI Overviews, AI Mode,
+Gemini) or `llm-patents` (OpenAI, Perplexity and other companies); Maps and local ranking → `google-maps-ranking`.
+For "what should I do", start with the official documentation and add another source only if it adds something
+the documentation lacks. A combined answer keeps one length setting, with one bold label per kind of source, and
+never presents one kind of source as proof of another.
+
+Do not list the settings in every answer. Mention them in one line only when it helps: the user asks what can be
+changed, or seems unhappy with the length or the citations.
+
+**If a search fails.** The script retries a dropped connection once by itself. If it still fails, run the command
+once more after a few seconds before you conclude that your environment has no network access.
+
 ## How to build the answer
 
-Answer in the user's language. Leave patent titles and quotes in their original English; if needed, add a short
-explanation in the user's language next to them. Give the short answer to the question first, then show the
+Language, length and citations follow the answer settings above. Give the short answer to the question first, then show the
 evidence.
 
 Tie every claim to its source:
@@ -148,15 +237,14 @@ Tie every claim to its source:
 - Then at most three or four short bullets or a short paragraph: each one a patent, what that patent says, and where
   (`Claim 1` or `[¶42]`). At most one short quote per patent; summarise the rest in your own words.
 - A one-sentence limitation note (the patent describes this; it does not show it is used) and the source links.
-- 150–300 words in total (excluding links). For a broad question you can go up to four patents; still give each one
-  only a sentence or two. Do not add headings, tables or a "what I searched" list; go longer only if the user asks
-  for a comparison, a full listing or a detailed analysis.
+- Length follows the answer settings. For a broad question you can go up to four patents; still give each one only
+  a sentence or two. Do not add a "what I searched" list.
 
 Do not write up everything you read: leave out side patents found while searching, family member listings and
 method notes. Pick the two or three findings most useful to the user; for the rest, say in one sentence on the last
 line "I can also go into X if you like". The same measure applies to the research: most questions are answered with
-6–10 commands (one or two `search`, one or two `show`, a few `claims` / `passages`); do not spend time on extra
-searches that will not change the answer.
+6–10 commands (one or two `search`, one or two `show`, a few `claims` / `passages`). Read in full only the patents
+you will cite; do not spend time on extra searches that will not change the answer.
 
 ### Example
 
@@ -183,6 +271,12 @@ Question: "Does Google have a patent for a site quality score, and how is it cal
 - `references/background.md` — the coverage and limits of the archive, what the tags mean, how to read a patent
   (priority/application/grant, families, types of claims). Read it when the user asks about the archive itself, its
   reliability or a patent's legal status.
+
+A patent answers "what method did Google describe". If the question is really about what Google recommends or
+requires today (a rule, a threshold, a policy), say that this is the patent view only and that Google's official
+documentation is the place for the rule; use the `google-search-docs` skill if it is installed. For AI Overviews,
+AI Mode and Gemini patents, prefer `google-ai-patents` if it is installed; this archive holds only the search
+patents that overlap.
 
 If the user also has the `google-leak` skill, the two complement each other: the leak shows **what data** Google
 stores (field names), while the patents show **how a method is described**. When you use both, state separately

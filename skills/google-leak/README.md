@@ -1,6 +1,6 @@
 # Google Leak skill for Claude and AI agents
 
-<p align="center"><img src="../../assets/cards/google-leak.png" alt="" width="560"></p>
+<p align="center"><img src="../../assets/cards/google-leak.png" alt="Google Leak skill for Claude and AI agents" width="560"></p>
 
 Search the leaked Google Content Warehouse API documentation: 2,756 schemas and 15,050 fields, with the description Google's engineers wrote for each one.
 
@@ -36,6 +36,10 @@ unzip -o /tmp/google-leak.zip -d ~/.claude/skills/
 ```
 
 Other agents (Codex, Cursor, Gemini CLI, Copilot, OpenCode): see the [install section](../../README.md#install).
+
+## Answer settings
+
+Answers come in the language you write in, short and with sources. Ask for a brief or detailed answer, a fixed language, or no sources: see [answer settings](../../README.md#answer-settings).
 
 ## What is in this folder
 

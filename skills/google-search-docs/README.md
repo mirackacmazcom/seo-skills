@@ -1,6 +1,6 @@
 # Google Search Docs skill for Claude and AI agents
 
-<p align="center"><img src="../../assets/cards/google-search-docs.png" alt="" width="560"></p>
+<p align="center"><img src="../../assets/cards/google-search-docs.png" alt="Google Search Docs skill for Claude and AI agents" width="560"></p>
 
 Search 3,630 official Google documents on search and SEO, from Search Central and its blog to the Quality Rater Guidelines and web.dev, and quote them exactly.
 
@@ -36,6 +36,10 @@ unzip -o /tmp/google-search-docs.zip -d ~/.claude/skills/
 ```
 
 Other agents (Codex, Cursor, Gemini CLI, Copilot, OpenCode): see the [install section](../../README.md#install).
+
+## Answer settings
+
+Answers come in the language you write in, short and with sources. Ask for a brief or detailed answer, a fixed language, or no sources: see [answer settings](../../README.md#answer-settings).
 
 ## What is in this folder
 

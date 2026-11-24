@@ -75,7 +75,8 @@ Instead of "dwell time", patents mostly say "viewing time", "click duration" or 
 | Patent | Priority | Note |
 |---|---|---|
 | `US9031929B1` Site quality score | 2012 | The ratio of queries referring to the site to clicks on the site. Navneet Panda is a co-inventor. |
-| `US8682892B1` Ranking search results | 2012 | Navneet Panda; a group-level calculation for groups of resources, based on the number of independent incoming links. |
+| `US8682892B1` Ranking search results | 2012 | Navneet Panda; a group-level modification factor for groups of resources, from two counts: independent incoming links and "reference queries" (queries that name the site). The description gives the initial factor as the ratio of independent links to reference queries [¶24]. |
+| `US9195944B1` Scoring site quality | 2012 | A site quality score from visit durations: the time between a click on a search result and the return to the results page, aggregated over the site's resources (Claim 1). |
 | `US9684697B1` Ranking search results | 2012 | Same period, same circle of inventors. |
 | `US9767157B2` Predicting site quality | 2013 | Predicting the quality of new sites with a phrase model. |
 | `US9002832B1` Classifying sites as low quality sites | 2012 | Classification based on the quality groups of the resources linking to the site. |
@@ -101,12 +102,15 @@ Search: `search author reputation score`, `search trust rank label --core`, `sea
 | `US7346839B2` Information retrieval based on historical data | 2003 | Document inception date, content changes, link and anchor text history, traffic, domain data (listed in Claim 1). The main source of the "sandbox" and domain age discussions. |
 | `US7840572B2` Document scoring based on document inception date | 2003 | A continuation in the same family. Claim 1 lists how the inception date can be determined; one of the options is the domain's registration date ("a date on which a domain associated with the document is registered"). |
 | `US8521749B2` Document scoring based on document inception date | 2003 | Another continuation in the same family. Claim 1 protects the rate at which links are created since the inception date (average rate at which links [...] are created). |
+| `US8112426B2` Document scoring based on document content update | 2003 | The continuation whose claims are about content updates: Claim 1 scores a document from how often its content is updated in a time period and from the amount of change. The description lets unimportant changes (scripts, comments, advertisements, navigation, boilerplate, date/time tags) count for less [¶64]. |
 | `US9002867B1` Modifying ranking data based on document changes | 2010 | Weighting a result quality statistic for different versions of a document. |
 
-Search: `search '"inception date"'`, `search '"history data"' score document`, `search stale fresh document ranking --core`,
+Search: `search '"inception date"'`, `search '"history data"' score document`, `search content update frequency document score --core`,
 `search '"domain"' registered inception date --in claims`.
 This family is large and each continuation protects a different type of data: list the members with
-`family US7346839` and read the relevant member with `claims <member>`.
+`family US7346839` and read the relevant member with `claims <member>`. Paragraph numbers differ between family
+members (the same paragraph can be ¶61 in one and ¶64 in another): cite the number together with the publication
+you read it in.
 
 ## 7. Spam and manipulation
 

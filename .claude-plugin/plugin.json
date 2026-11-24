@@ -1,10 +1,25 @@
 {
   "name": "seo-skills",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Seven free SEO skills that answer from primary sources: the Google leak, Google patents, AI and LLM patents, Google's official search documentation, Google staff statements and Google Maps ranking sources.",
-  "author": { "name": "SEO Skills", "url": "https://seoskills.io" },
+  "author": {
+    "name": "SEO Skills",
+    "url": "https://seoskills.io"
+  },
   "homepage": "https://seoskills.io",
   "repository": "https://github.com/mirackacmazcom/seo-skills",
   "license": "MIT",
-  "keywords": ["seo", "google-leak", "google-patents", "ai-overviews", "local-seo", "search-console", "geo", "claude-skills", "agent-skills"]
+  "keywords": [
+    "seo",
+    "claude-code",
+    "claude-skills",
+    "agent-skills",
+    "mcp",
+    "google-leak",
+    "google-patents",
+    "ai-overviews",
+    "local-seo",
+    "technical-seo",
+    "generative-engine-optimization"
+  ]
 }

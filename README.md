@@ -13,13 +13,22 @@
 
 # SEO Skills for Claude Code, Codex, Cursor and other AI agents
 
-**Seven free SEO skills that make your AI agent answer from primary sources instead of memory.** Each skill gives the agent a searchable archive: the leaked Google Content Warehouse API documentation, Google's search patents, Google and Alphabet AI patents, LLM patents, Google's official search documentation, public statements by Google's search team, and the sources behind Google Maps ranking. The agent searches the archive, quotes the field, the claim or the passage, and tells you what the source does not show.
+**Seven free SEO skills, packaged as a Claude Code SEO plugin and an MCP server, that make your AI agent answer from primary sources instead of memory.** Each skill gives the agent a searchable archive: the leaked Google Content Warehouse API documentation, Google's search patents, Google and Alphabet AI patents, LLM patents, Google's official search documentation, public statements by Google's search team, and the sources behind Google Maps ranking. The agent searches the archive, quotes the field, the claim or the passage, and tells you what the source does not show.
 
 Works with **Claude Code**, the **Claude apps**, **Codex**, **Cursor**, **Gemini CLI**, **GitHub Copilot in VS Code** and **OpenCode**, and as a remote **MCP server**.
 
+Install all seven in Claude Code:
+
+```text
+/plugin marketplace add mirackacmazcom/seo-skills
+/plugin install seo-skills@seo-skills
+```
+
+Other ways to install, and other agents: [Install](#install).
+
 <p align="center"><img src="assets/agents.png" alt="Works with Claude Code, Claude apps, Codex, Cursor, Gemini CLI, VS Code Copilot and OpenCode" width="100%"></p>
 
-[Website](https://seoskills.io) · [Install guide](https://seoskills.io/install/) · [All skills](#the-seven-skills) · [MCP server](#mcp-server) · [FAQ](#faq)
+[Website](https://seoskills.io) · [Install guide](https://seoskills.io/install/) · [All skills](#the-seven-skills) · [Answer settings](#answer-settings) · [MCP server](#mcp-server) · [FAQ](#faq)
 
 <p align="center">
   <img src="assets/demos/google-leak.png" alt="Claude using the Google Leak skill to answer an SEO question about publish dates, quoting PerDocData.semanticDate from the leaked documentation" width="100%">
@@ -32,6 +41,7 @@ Works with **Claude Code**, the **Claude apps**, **Codex**, **Cursor**, **Gemini
 - [The seven skills](#the-seven-skills)
 - [Install](#install)
 - [How to use the skills](#how-to-use-the-skills)
+- [Answer settings](#answer-settings)
 - [MCP server](#mcp-server)
 - [How it works](#how-it-works)
 - [What each kind of source can and cannot show](#what-each-kind-of-source-can-and-cannot-show)
@@ -159,7 +169,7 @@ curl -L https://seoskills.io/downloads/seoskills-all.zip -o /tmp/seoskills-all.z
 unzip -o /tmp/seoskills-all.zip -d ~/.claude/skills/
 ```
 
-Replace `seoskills-all` with a skill name, such as `google-leak`, to install one skill. Claude Code picks up the new folders in the session you have open; if a skill does not appear, run `/reload-skills`.
+Replace `seoskills-all` with a skill name, such as `google-leak`, to install one skill. Claude Code picks up the new folders in the session you have open; if a skill does not appear, start a new session. On Windows, run these commands in WSL or Git Bash, or download the ZIP and extract it into `%USERPROFILE%\.claude\skills`.
 
 ### From this repository with git
 
@@ -179,7 +189,7 @@ The skills follow the open [Agent Skills](https://agentskills.io) format, so the
 | Cursor | `~/.cursor/skills/` | `.cursor/skills/` | type `/` in Agent chat |
 | Gemini CLI | `~/.gemini/skills/` | `.gemini/skills/` | ask; it requests permission |
 | VS Code Copilot | `~/.copilot/skills/` | `.github/skills/` | type `/` in chat |
-| OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` | `@google-leak` |
+| OpenCode | `~/.config/opencode/skills/` | `.opencode/skills/` | ask; the agent loads it |
 
 `~/.agents/skills/` is read by Codex, Cursor, Gemini CLI and OpenCode, so one copy there covers several agents:
 
@@ -208,7 +218,7 @@ Python 3 and internet access. No other packages, no account and no API key.
 I'm about to redirect 300 old posts to one guide. What do the sources say?
 ```
 
-**Or call a skill by name** when you want a specific archive:
+**Or call a skill by name** when you want a specific archive (`/seo-skills:google-leak` when you installed the plugin):
 
 ```text
 /google-leak Is there a field for host age?
@@ -217,6 +227,32 @@ I'm about to redirect 300 old posts to one guide. What do the sources say?
 ```
 
 Good questions name a plan or a claim to check, not just a topic. The skills are built to say what the source supports, suggest what to do, and mark where the evidence stops, so you can act on it.
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
+## Answer settings
+
+You decide how the answers look. Say it in the chat, or set it once.
+
+| Setting | Default | You can ask for |
+|---|---|---|
+| 🌍 Language | The language you write in | A fixed language, for example "always answer in Dutch" |
+| 📏 Length | Standard: the direct answer, then the one to three sources it rests on | `brief` (two or three sentences) or `detailed` (up to six sources, grouped by theme) |
+| 🔗 Sources | On: quotes, source names, dates and links | `off`: a plain answer without quotes or links |
+
+**In the chat**, write it the way you would say it. A preference such as "keep it short" holds for the rest of the conversation; "give me the long version of that" changes one answer:
+
+```text
+Shorter please, and skip the sources.
+```
+
+**Once, for every conversation**, add one line that starts with `SEO Skills:` to your agent's instruction file (`CLAUDE.md` for Claude Code, `AGENTS.md` for Codex and other agents, or the project instructions in the Claude apps):
+
+```text
+SEO Skills: detailed answers, sources off, always answer in Dutch
+```
+
+The settings work the same in all seven skills and through the MCP server. Turning sources off changes what you see, not how the answer is made: the skill still searches the archive first and shows the sources again as soon as you ask. A warning that changes the conclusion, such as "a patent does not prove Google uses this", stays in.
 
 <p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
