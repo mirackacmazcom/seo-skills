@@ -45,6 +45,7 @@ Other ways to install, and other agents: [Install](#install).
 - [MCP server](#mcp-server)
 - [How it works](#how-it-works)
 - [What each kind of source can and cannot show](#what-each-kind-of-source-can-and-cannot-show)
+- [Need more?](#need-more)
 - [FAQ](#faq)
 - [License](#license)
 
@@ -299,6 +300,18 @@ Every skill tells the agent what its source proves, so an answer does not turn o
 | Patents | That Google described a method and sought protection for it | That the method is in use |
 | Official documentation | What Google recommends, supports and treats as a violation | Ranking weights or a full list of signals |
 | Staff statements | Google's comment on one question at one moment | A permanent rule; positions change |
+
+<p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
+
+## Need more?
+
+The seven skills are free and stay free. For anything beyond them, email **[contact@seoskills.io](mailto:contact@seoskills.io)**:
+
+| | |
+|---|---|
+| 🚀 **Higher limits** | More than 2,000 searches a day for a team, an agency or a product |
+| 🔒 **Private archive** | Your own documentation, research or data as a skill only your team can search |
+| 🛠️ **Custom skill** | A skill built for your work: an audit routine, a house style, a source nobody has archived yet |
 
 <p align="center"><img src="assets/divider.png" alt="" width="100%"></p>
 
