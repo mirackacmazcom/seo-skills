@@ -11,6 +11,10 @@
   <a href="https://seoskills.io"><img alt="Website seoskills.io" src="https://img.shields.io/badge/web-seoskills.io-c8f352?style=flat-square&labelColor=1a1b1f"></a>
 </p>
 
+<p align="center">
+  <a href="https://glama.ai/mcp/connectors/io.github.mirackacmazcom/seo-skills"><img alt="SEO Skills MCP connector on Glama" src="https://glama.ai/mcp/connectors/io.github.mirackacmazcom/seo-skills/badges/score.svg"></a>
+</p>
+
 # SEO Skills for Claude Code, Codex, Cursor and other AI agents
 
 **Seven free SEO skills, packaged as a Claude Code SEO plugin and an MCP server, that make your AI agent answer from primary sources instead of memory.** Each skill gives the agent a searchable archive: the leaked Google Content Warehouse API documentation, Google's search patents, Google and Alphabet AI patents, LLM patents, Google's official search documentation, public statements by Google's search team, and the sources behind Google Maps ranking. The agent searches the archive, quotes the field, the claim or the passage, and tells you what the source does not show.
